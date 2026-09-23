@@ -1,0 +1,61 @@
+.screenshot-visual {
+  background: #e8eefb;
+  padding: 25px 20px;
+}
+
+.screenshot-browser {
+  width: 100%;
+  border: 1px solid #dce2ef;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 12px 30px #254a8314;
+}
+
+.screenshot-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  background: #fdfdff;
+  border-bottom: 1px solid #edf0f6;
+  color: #77839a;
+  font-size: 7px;
+}
+
+.screenshot-browser img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.screenshot-fuuud { background: #e6eee7; }
+.screenshot-esure { background: #ebece1; }
+.screenshot-sendam { background: #e2efed; }
+.screenshot-ije { background: #eee8e1; }
+
+.project-filters { flex-wrap: wrap; }
+
+.project-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 15px;
+  padding-block: 6px;
+  font-size: 11px;
+  font-weight: 550;
+  color: var(--blue);
+}
+
+.project-live-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.project-dialog .screenshot-visual {
+  height: auto;
+  padding: 25px 30px;
+}
+
+@media (max-width: 600px) {
+  .screenshot-visual { padding: 24px 13px; }
+  .project-dialog .screenshot-visual { height: auto; padding: 23px 16px; }
+}

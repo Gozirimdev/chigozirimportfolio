@@ -1,0 +1,43 @@
+/* Keep supporting copy readable without competing with the headings. */
+.hero-location,
+.section-label,
+.stack-label,
+.project-meta,
+.project-status,
+.tags span,
+.filter:not(.active),
+.supporting-work > div > span,
+.principle-top > span:last-child,
+.contact-eyebrow,
+.contact-links,
+.footer > span,
+.footer > a:last-child,
+.learning-note div > span,
+.about-signature span {
+  color: #62728b;
+}
+
+.project-description,
+.about-copy > p,
+.principles p,
+.supporting-work p,
+.contact-text p,
+.section-heading .approach-intro {
+  color: #626e83;
+}
+
+.dialog-subtitle,
+.dialog-content section p,
+.dialog-content li,
+.dialog-eyebrow,
+.project-note p {
+  color: #64718a;
+}
+
+@media (min-width: 801px) {
+  .project-description,
+  .about-copy > p,
+  .principles p {
+    font-size: 13px;
+  }
+}
