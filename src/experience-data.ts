@@ -1,5 +1,6 @@
 // Roles and award supplied by Chigozirim. Add dates and exact chapter names when available.
-export type Evidence = { src?: string; alt: string; caption: string }
+export type EvidenceImage = { src: string; alt: string; caption?: string }
+export type Evidence = { src?: string; images?: EvidenceImage[]; alt: string; caption: string }
 export type Experience = {
   title: string
   organization: string

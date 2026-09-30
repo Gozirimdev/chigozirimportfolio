@@ -44,6 +44,21 @@ The project descriptions were drafted from reviewed repository evidence. Persona
 
 Save approved images in `public/evidence/`. In `src/experience-data.ts`, set an entry's `evidence.src` to `/evidence/your-image.jpg`, provide descriptive `alt` text, and update its caption. The dashed holder becomes an image that opens at full size. There is no public upload form.
 
+For multiple pictures, use `evidence.images` instead:
+
+```ts
+evidence: {
+  alt: 'Bootcamp highlights',
+  caption: 'Cloud computing and data science bootcamp',
+  images: [
+    { src: '/evidence/bootcamp-1.jpg', alt: 'Opening session' },
+    { src: '/evidence/bootcamp-2.jpg', alt: 'Participants at the workshop' },
+  ],
+}
+```
+
+The same format works for showcase, experience, and certificate cards. Multiple images slide automatically every five seconds while visible. Visitors can use arrows, dots, keyboard arrows, or touch swipes, and pause/resume playback. Hovering or focusing the card pauses rotation; manual navigation pauses it until resumed and focus leaves the card. Reduced-motion preferences disable automatic playback and slide animation. Empty holders stay unchanged, and a single image has no slideshow controls.
+
 The Fuuud showcase result and roles currently use the owner's supplied information. Exact school/association name, community chapter, Women Techmakers title, internship specialism, and dates still need confirmation. No dates or employment at AWS/Google have been inferred. Fuuud's showcase achievement is presented separately from the newer health project's case study because the showcased version has not been confirmed.
 
 The `credentials` array is intentionally empty. Two labeled certificate holders appear until actual credential names, issuers, images, and optional verification URLs are added. Placeholder holders do not assert that any particular certification was earned.

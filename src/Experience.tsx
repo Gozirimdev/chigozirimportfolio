@@ -1,21 +1,9 @@
-import { ArrowUpRight, Award, GitMerge, Github, ImagePlus, Trophy, Users } from 'lucide-react'
+import { ArrowUpRight, Award, GitMerge, Github, Trophy, Users } from 'lucide-react'
 import { contributions, credentials, experiences, showcase } from './experience-data'
-import type { Evidence } from './experience-data'
+import EvidenceCard from './EvidenceCard'
 import { profile } from './data'
 import GitHubCalendar from './GitHubCalendar'
 import './experience.css'
-
-function EvidenceCard({ evidence, kind = 'Photo' }: { evidence: Evidence; kind?: string }) {
-  if (evidence.src) return <figure className="evidence-photo">
-    <a href={evidence.src} target="_blank" rel="noreferrer" aria-label={`Open ${evidence.alt}`}><img src={evidence.src} alt={evidence.alt} loading="lazy" /></a>
-    <figcaption>{evidence.caption}</figcaption>
-  </figure>
-  return <div className="evidence-placeholder" role="img" aria-label={`${evidence.caption}. ${kind} to be added.`}>
-    <ImagePlus size={23} strokeWidth={1.3} aria-hidden="true" />
-    <span>{evidence.caption}</span>
-    <small>{kind} to be added</small>
-  </div>
-}
 
 function Label({ number, text }: { number: string; text: string }) {
   return <div className="section-label"><span>{number}</span><span className="label-rule"/>{text}</div>
