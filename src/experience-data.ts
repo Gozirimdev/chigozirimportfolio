@@ -14,7 +14,15 @@ export const showcase = {
   title: 'UNIZIK Tech Talent Showcase 1.0',
   result: '2nd place',
   description: 'Led the Fuuud team to a second-place finish at UNIZIK Tech Talent Showcase 1.0.',
-  evidence: { alt: 'Fuuud team at UNIZIK Tech Talent Showcase 1.0', caption: 'Team photo or showcase recognition' } as Evidence,
+  evidence: {
+    alt: 'Fuuud team at UNIZIK Tech Talent Showcase 1.0',
+    caption: 'Fuuud showcase highlights',
+    images: [
+      { src: '/fuuudpics/fuuudpics2.jpeg', alt: 'Fuuud team posing in front of the UNIZIK Tech Talent Showcase banner', caption: 'Fuuud team at the showcase' },
+      { src: '/fuuudpics/fuuudpics1.jpeg', alt: 'A speaker addressing the panel during the showcase presentation', caption: 'Showcase presentation' },
+      { src: '/fuuudpics/fuuudpics3.jpeg', alt: 'Official UNIZIK Tech Talent Showcase 1.0 winners poster listing Fuuud in second place', caption: 'Official results: Fuuud, second place' },
+    ],
+  } satisfies Evidence,
 }
 
 export const experiences: Experience[] = [
