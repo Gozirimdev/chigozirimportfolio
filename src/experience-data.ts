@@ -19,9 +19,17 @@ export const showcase = {
 
 export const experiences: Experience[] = [
   {
-    title: 'Director of Software', organization: 'School community', category: 'Student leadership',
-    description: 'Organised a bootcamp on cloud computing and data science in partnership with the leader of the AWS Student Builders Group and DNS Anambra.',
-    evidence: { alt: 'Cloud computing and data science bootcamp organised as Director of Software', caption: 'Bootcamp photos or event flyer' },
+    title: 'Director of Software', organization: 'NACOS', category: 'Student leadership',
+    description: 'Organised a bootcamp on cloud computing and data science in partnership with the leader of the AWS Student Builders Group and DSN Anambra.',
+    evidence: {
+      alt: 'NACOS experience as Director of Software',
+      caption: 'NACOS bootcamp highlights',
+      images: [
+        { src: '/nacosExperience/nacoswork.jpeg', alt: 'Bootcamp participants seated in a classroom', caption: 'NACOS bootcamp participants' },
+        { src: '/nacosExperience/nacoswork2.jpeg', alt: 'A speaker addressing participants during the classroom session', caption: 'A session at the NACOS bootcamp' },
+        { src: '/nacosExperience/dnspics.jpeg', alt: 'Two attendees standing in front of a DSN Anambra banner', caption: 'With the DSN Anambra community' },
+      ],
+    },
   },
   {
     title: 'Program Lead', organization: 'AWS student builder group', category: 'Community leadership',
