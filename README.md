@@ -61,7 +61,7 @@ The same format works for showcase, experience, and certificate cards. Multiple 
 
 The Fuuud showcase result and roles currently use the owner's supplied information. Exact school/association name, community chapter, Women Techmakers title, internship specialism, and dates still need confirmation. No dates or employment at AWS/Google have been inferred. Fuuud's showcase achievement is presented separately from the newer health project's case study because the showcased version has not been confirmed.
 
-The `credentials` array is intentionally empty. Two labeled certificate holders appear until actual credential names, issuers, images, and optional verification URLs are added. Placeholder holders do not assert that any particular certification was earned.
+The `credentials` array contains the supplied Deebug Institute frontend and backend certificates. Their images live in `public/certificate/` and share one slideshow. The View transcript link opens the supplied backend course transcript PDF in a new tab.
 
 The GitHub calendar fetches public activity for `Gozirimdev` from the GitHub Contributions API on page load. The provider caches results for one hour. Visitors can switch between the last year and individual years, explore daily counts, and retry if the service is unavailable. No API token is required.
 

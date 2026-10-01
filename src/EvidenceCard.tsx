@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, ImagePlus, Pause, Play } from 'lucide-react'
-import type { Evidence } from './experience-data'
+﻿import { useEffect, useRef, useState } from 'react'
+import { ArrowUpRight, ChevronLeft, ChevronRight, ImagePlus, Pause, Play } from 'lucide-react'
+import type { Evidence, EvidenceImage } from './experience-data'
 
 export default function EvidenceCard({ evidence, kind = 'Photo' }: { evidence: Evidence; kind?: string }) {
-  const images = evidence.images?.length ? evidence.images : evidence.src ? [{ src: evidence.src, alt: evidence.alt, caption: evidence.caption }] : []
+  const images: EvidenceImage[] = evidence.images?.length ? evidence.images : evidence.src ? [{ src: evidence.src, alt: evidence.alt, caption: evidence.caption }] : []
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const [hovered, setHovered] = useState(false)
@@ -56,5 +56,7 @@ export default function EvidenceCard({ evidence, kind = 'Photo' }: { evidence: E
       </>}
     </div>
     <figcaption aria-live={playing ? 'off' : 'polite'}>{images[current].caption || evidence.caption}{images.length > 1 && <span> {current + 1} / {images.length}</span>}</figcaption>
+    {images[current].transcriptUrl && <a className="project-live-link certificate-transcript" href={images[current].transcriptUrl} target="_blank" rel="noreferrer">View transcript <ArrowUpRight size={16} aria-hidden="true"/><span className="certificate-file-type">PDF</span></a>}
   </figure>
 }
+

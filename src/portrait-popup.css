@@ -1,0 +1,12 @@
+.portrait-trigger { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; vertical-align: middle; background: transparent; color: var(--blue); border-radius: 50%; }
+.portrait-trigger:hover { background: #e7edff; }
+.portrait-dialog { padding: 14px; border: 0; background: transparent; overflow: visible; max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); margin: auto; }
+.portrait-dialog::backdrop { background: #07152bcc; backdrop-filter: blur(7px); }
+.portrait-light-frame { position: relative; overflow: hidden; padding: 4px; border-radius: 23px; box-shadow: 0 0 28px #4a85ff80, 0 0 65px #2d65e54d; isolation: isolate; }
+.portrait-light-frame::before { content: ''; position: absolute; inset: -70%; z-index: -1; background: conic-gradient(#2264ff, #fff 12%, #55adff 23%, #2457eb 42%, #fff 62%, #74baff 73%, #2264ff); animation: portrait-light-turn 5s linear infinite; }
+.portrait-inner { position: relative; overflow: hidden; border-radius: 19px; background: #10203d; }
+.portrait-inner img { display: block; width: auto; max-width: min(440px, calc(100vw - 60px)); height: auto; max-height: calc(100dvh - 70px); object-fit: contain; }
+.portrait-close { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #fff; color: #183460; box-shadow: 0 2px 16px #07152b40; }
+.portrait-close:hover { background: #e7edff; }
+@keyframes portrait-light-turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .portrait-light-frame::before { animation: none; } }

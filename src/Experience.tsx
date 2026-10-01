@@ -48,8 +48,15 @@ export default function ExperienceSections() {
 
     <section id="credentials" className="credentials-section container section-space">
       <Label number="04" text="CERTIFICATES & LEARNING"/>
-      <div className="section-heading"><div><h2>Always a <span className="serif-word">student.</span></h2><p>Space for certificates and learning milestones.</p></div><Award size={30} className="credentials-icon" strokeWidth={1.3}/></div>
-      <div className="credentials-grid">{credentials.length ? credentials.map(item => <article className="credential-card" key={`${item.issuer}-${item.title}`}><EvidenceCard evidence={item.evidence} kind="Certificate"/><h3>{item.title}</h3><p>{item.issuer}{item.date ? ` · ${item.date}` : ''}</p>{item.url && <a className="project-live-link" href={item.url} target="_blank" rel="noreferrer">Verify credential <ArrowUpRight size={13}/></a>}</article>) : [1, 2].map(number => <EvidenceCard key={number} kind="Certificate" evidence={{ alt: `Certificate space ${number}`, caption: 'Certificate image' }}/>)}</div>
+      <div className="section-heading"><div><h2>Always a <span className="serif-word">student.</span></h2><p>Certificates and learning milestones.</p></div><Award size={30} className="credentials-icon" strokeWidth={1.3}/></div>
+      <div className="certificate-gallery"><EvidenceCard kind="Certificate" evidence={{
+        alt: 'Certificates and learning milestones',
+        caption: 'Certificate images',
+        images: credentials.flatMap(item => {
+          const images = item.evidence.images?.length ? item.evidence.images : item.evidence.src ? [{ src: item.evidence.src, alt: item.evidence.alt }] : []
+          return images.map(image => ({ ...image, transcriptUrl: item.transcriptUrl, caption: `${item.title} · ${item.issuer}${item.date ? ` · ${item.date}` : ''}` }))
+        }),
+      }}/></div>
     </section>
   </>
 }

@@ -1,5 +1,5 @@
 // Roles and award supplied by Chigozirim. Add dates and exact chapter names when available.
-export type EvidenceImage = { src: string; alt: string; caption?: string }
+export type EvidenceImage = { src: string; alt: string; caption?: string; transcriptUrl?: string }
 export type Evidence = { src?: string; images?: EvidenceImage[]; alt: string; caption: string }
 export type Experience = {
   title: string
@@ -33,6 +33,7 @@ export const experiences: Experience[] = [
       alt: 'NACOS experience as Director of Software',
       caption: 'NACOS bootcamp highlights',
       images: [
+        { src: '/nacosExperience/nacos.jpeg', alt: 'Bootcamp participants seated in a classroom', caption: 'NACOS bootcamp participants' },
         { src: '/nacosExperience/nacoswork.jpeg', alt: 'Bootcamp participants seated in a classroom', caption: 'NACOS bootcamp participants' },
         { src: '/nacosExperience/nacoswork2.jpeg', alt: 'A speaker addressing participants during the classroom session', caption: 'A session at the NACOS bootcamp' },
         { src: '/nacosExperience/dnspics.jpeg', alt: 'Two attendees standing in front of a DSN Anambra banner', caption: 'With the DSN Anambra community' },
@@ -42,17 +43,32 @@ export const experiences: Experience[] = [
   {
     title: 'Program Lead', organization: 'AWS student builder group', category: 'Community leadership',
     description: 'Program leadership within an AWS student builder community.',
-    evidence: { alt: 'AWS student builder community activity', caption: 'Programme or community event' },
+    evidence: {
+      alt: 'AWS student builder community activity',
+      caption: 'AWS Student Builders Group session',
+      images: [
+        { src: '/aws/aws.jpeg', alt: 'A speaker presenting to students in a classroom during an AWS student builder community session', caption: 'AWS Student Builders Group session' },
+      ],
+    },
   },
-  {
-    title: 'Community involvement', organization: 'Women Techmakers', category: 'Tech community',
-    description: 'Involvement in the Women Techmakers community.',
-    evidence: { alt: 'Women Techmakers community activity', caption: 'Community event or participation' },
-  },
+  // Restore this card once Women Techmakers photos are available.
+  // {
+  //   title: 'Community involvement', organization: 'Women Techmakers', category: 'Tech community',
+  //   description: 'Involvement in the Women Techmakers community.',
+  //   evidence: { alt: 'Women Techmakers community activity', caption: 'Community event or participation' },
+  // },
   {
     title: 'Internship', organization: 'Deebug Institute', category: 'Practical experience',
-    description: 'Internship experience at Deebug Institute.',
-    evidence: { alt: 'Internship at Deebug Institute', caption: 'Internship photo or completion letter' },
+    description: 'Taught web development to students and assisted the manager during my internship at Deebug Institute.',
+    evidence: {
+      alt: 'Internship and web development teaching at Deebug Institute',
+      caption: 'Deebug Institute internship',
+      images: [
+        { src: '/internship/deebug3.jpeg', alt: 'Students working on laptops during a web development lesson', caption: 'Web development class at Deebug Institute' },
+        { src: '/internship/deebug2.jpeg', alt: 'A classroom session with students using laptops and receiving assistance', caption: 'Supporting students during a practical session' },
+        { src: '/internship/deebug.jpeg', alt: 'Working on a laptop at a desk during the internship', caption: 'At work during my internship' },
+      ],
+    },
   },
 ]
 
@@ -68,8 +84,18 @@ export type Credential = {
   issuer: string
   date?: string
   url?: string
+  transcriptUrl?: string
   evidence: Evidence
 }
 
-// No credential is claimed until its details are supplied.
-export const credentials: Credential[] = []
+export const credentials: Credential[] = [
+  {
+    title: 'Backend Web Development', issuer: 'Deebug Institute', date: '2025',
+    transcriptUrl: '/certificate/Favour%20Chigozirim%20Nwafor%202.pdf',
+    evidence: { src: '/certificate/deebug-backend.png', alt: 'Deebug Institute Backend Web Development certificate awarded to Favour Chigozirim Nwafor', caption: 'Backend Web Development certificate' },
+  },
+  {
+    title: 'Frontend Web Development', issuer: 'Deebug Institute', date: '2025',
+    evidence: { src: '/certificate/deebug-frontend.png', alt: 'Deebug Institute Frontend Web Development certificate awarded to Favour Chigozirim Nwafor', caption: 'Frontend Web Development certificate' },
+  },
+]

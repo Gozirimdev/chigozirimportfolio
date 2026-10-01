@@ -49,6 +49,11 @@
 .merged-status { display: flex; align-items: center; gap: 5px; font-size: 9px; color: #7058a2; background: #ece6f6; padding: 6px 9px; border-radius: 20px; }
 .contribution-arrow { color: #6980a7; }
 .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 23px; }
+.certificate-gallery { width: 100%; max-width: 760px; margin-inline: auto; }
+.certificate-transcript { margin-top: 18px; }
+.certificate-file-type { font-size: 10px; color: #62718a; letter-spacing: .5px; }
+.certificate-gallery > .evidence-placeholder { min-height: 240px; background: #f6f8fc; }
+.certificate-gallery .evidence-slide img { height: clamp(240px, 45vw, 440px); max-height: none; object-fit: contain; }
 .credentials-grid > .evidence-placeholder { min-height: 205px; background: #f6f8fc; }
 .credentials-icon { color: #8296b9; }
 .credential-card h3 { font-size: 16px; margin-top: 15px; }
